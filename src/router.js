@@ -1,6 +1,8 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
+// import Account from "./views/Account.vue";
+// import Authentication from "./views/Authentication.vue";
 
 Vue.use(Router);
 

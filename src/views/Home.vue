@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <XrpIntro msg="Welcome to Your Vue.js App"/>
+    <img alt="Ripple logo" src="../assets/ripple-logo-white.png">
+    <XrpIntro msg="One frictionless experience to send money globally"/>
   </div>
 </template>
 
