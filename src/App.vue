@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
+      <router-link to ="/"><img id="logo" alt="Ripple logo" src="./assets/ripple-logo-white.png"></router-link>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/account">Account</router-link> |
@@ -11,6 +12,9 @@
 </template>
 
 <style>
+body {
+  margin: 0;
+}
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -22,14 +26,20 @@
 }
 #nav {
   padding: 30px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: white;
 }
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+#logo {
+  width: 8%;
+  float: left;
 }
 </style>

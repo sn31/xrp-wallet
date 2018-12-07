@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <img alt="Ripple logo" src="../assets/ripple-logo-white.png">
     <XrpIntro msg="One frictionless experience to send money globally"/>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/dl4OzGHNaGk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 </template>
 
@@ -16,3 +16,8 @@ export default {
   }
 };
 </script>
+<style scoped>
+iframe {
+  margin: 30px;
+}
+</style>

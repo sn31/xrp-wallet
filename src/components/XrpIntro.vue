@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "Xrp Intro",
+  name: "XrpIntro",
   props: {
     msg: String
   }
