@@ -8,11 +8,12 @@
 <script>
 // @ is an alias to /src
 import XrpIntro from "@/components/XrpIntro.vue";
-
+import XrpIntroPanel from "@/components/XrpIntroPanel.vue";
 export default {
   name: "home",
   components: {
-    XrpIntro
+    XrpIntro,
+    XrpIntroPanel
   }
 };
 </script>
