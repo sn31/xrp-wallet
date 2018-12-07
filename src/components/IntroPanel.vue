@@ -1,9 +1,9 @@
 <template>
-  <b-row id="panel">
+  <b-row v-for="panel in panels" id="panel">
       <b-col lg="4"><img src="../assets/ripplenet-section.gif"/></b-col>
       <b-col id="info" lg="8">
-          <h1>Meet RippleNet</h1>
-          <p>Ripple connects banks and payment providers via RippleNet to provide one frictionless experience for sending and receiving money globally.</p>
+          <h1>{{panel.title}}</h1>
+          <p>{{panel.description}}</p>
           <ul>
               <li><img class="sm-logo" src="../assets/access.png"></li>
               <li><img class="sm-logo" src="../assets/cost.png"></li>
@@ -13,7 +13,20 @@
       </b-col>
   </b-row>
 </template>
-
+<script>
+export default {
+  name: "IntroPanel",
+  data() {
+    return {
+      panels:[],
+      titles:["Today’s Payment Rails Don’t Cut It","Meet RippleNet","Better Than Any Blockchain","Growing Global Network"],
+      descriptions:["In a world where three billion people are connected online, cars drive themselves and appliances can communicate, global payments are still stuck in the disco era. Why? The payment infrastructure was built before the Internet with few updates.",
+    "Ripple connects banks and payment providers via RippleNet to provide one frictionless experience for sending and receiving money globally.","RippleNet runs on the most advanced blockchain technology. It is scaleable, secure and interoperates with different networks. Customers have optional access to source liquidity using the world's fastest and most reliable digital asset for payments: XRP.",
+    "Banks, payment providers and digital asset exchanges process and provide liquidity for payments on RippleNet, creating new, competitive cross-border payments services for their customers."]
+    }
+  }
+}
+</script>
 <style scoped>
 img {
   width: 70%;
