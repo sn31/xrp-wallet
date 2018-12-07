@@ -18,10 +18,11 @@
 
 <style scoped>
 .bv-row {
-  padding: 20px 10px 20px 10px;
+  text-align: center;
+  margin: 0;
 }
 img {
-  width: 40%;
+  width: 60%;
 }
 h1 {
   padding-top: 30px;
