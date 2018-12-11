@@ -15,17 +15,15 @@
   </b-row>
 </template>
 <script>
-
- export default {
-   
+export default {
   props: {
-   panel: {
-    type: Object,
-    required: true
-   }
+    panel: {
+      type: Object,
+      required: true
+    }
   }
- }
- </script>
+};
+</script>
 <style scoped>
 img {
   width: 70%;
