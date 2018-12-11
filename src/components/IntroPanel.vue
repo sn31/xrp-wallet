@@ -1,6 +1,7 @@
 
 <template>
-  <b-row class="panel">
+  <b-row :class="panel.title ==  'Today’s Payment Rails Don’t Cut It' ? 'panel-light' :
+  panel.title ==  'Meet RippleNet' ? 'panel-dark': 'panel-white'">
       <b-col lg="4"><img :src="panel.image"/></b-col>
       <b-col id="info" lg="8">
           <h1>{{panel.title}}</h1>
@@ -26,7 +27,9 @@ export default {
 </script>
 <style scoped>
 img {
-  width: 70%;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 h1 {
   padding-top: 30px;
@@ -35,10 +38,19 @@ h1 {
 p {
   color: #808080;
 }
-.panel {
+.panel-light {
+  padding: 50px 0 0;
+  border-bottom: 1px solid #ccc;
+  background-color: #f3f5f7;
+}
+.panel-dark {
+  padding: 50px 0 0;
   background-color: #e6eaee;
-  text-align: center;
-  margin: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.panel-white {
+  border-bottom: 1px solid #ccc;
 }
 .sm-logo {
   width: 30%;
