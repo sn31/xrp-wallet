@@ -1,7 +1,7 @@
 
 <template>
   <b-row class="panel">
-      <b-col lg="4"><img src="../assets/ripplenet-section.gif"/></b-col>
+      <b-col lg="4"><img :src="panel.image"/></b-col>
       <b-col id="info" lg="8">
           <h1>{{panel.title}}</h1>
           <p>{{panel.description}}</p>
@@ -15,7 +15,9 @@
   </b-row>
 </template>
 <script>
+
  export default {
+   
   props: {
    panel: {
     type: Object,

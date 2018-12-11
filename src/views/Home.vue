@@ -10,6 +10,7 @@
 // @ is an alias to /src
 import Intro from "@/components/Intro.vue";
 import IntroPanel from "@/components/IntroPanel.vue";
+
 export default {
   name: "home",
   components: {
@@ -32,8 +33,9 @@ export default {
     "RippleNet runs on the most advanced blockchain technology. It is scaleable, secure and interoperates with different networks. Customers have optional access to source liquidity using the world's fastest and most reliable digital asset for payments: XRP.",
     "Banks, payment providers and digital asset exchanges process and provide liquidity for payments on RippleNet, creating new, competitive cross-border payments services for their customers."
   ];
+  let images = [require('../assets/problem-section.gif'),require('../assets/problem-section.gif'),require('../assets/ripplenet-section.gif'),require('../assets/problem-section.gif')];
     for (let i =0; i< titles.length;i++){
-      panels.push({title:titles[i],description:descriptions[i]})
+      panels.push({title:titles[i],description:descriptions[i],image:images[i]})
     };
     return {
       panels
