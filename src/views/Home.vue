@@ -25,15 +25,13 @@ export default {
     "Today’s Payment Rails Don’t Cut It",
     "Meet RippleNet",
     "Better Than Any Blockchain",
-    "Growing Global Network"
   ];
   let descriptions = [
     "In a world where three billion people are connected online, cars drive themselves and appliances can communicate, global payments are still stuck in the disco era. Why? The payment infrastructure was built before the Internet with few updates.",
     "Ripple connects banks and payment providers via RippleNet to provide one frictionless experience for sending and receiving money globally.",
     "RippleNet runs on the most advanced blockchain technology. It is scaleable, secure and interoperates with different networks. Customers have optional access to source liquidity using the world's fastest and most reliable digital asset for payments: XRP.",
-    "Banks, payment providers and digital asset exchanges process and provide liquidity for payments on RippleNet, creating new, competitive cross-border payments services for their customers."
   ];
-  let images = [require('../assets/problem-section.gif'),require('../assets/problem-section.gif'),require('../assets/ripplenet-section.gif'),require('../assets/problem-section.gif')];
+  let images = [require('../assets/problem-section.gif'),require('../assets/ripplenet-section.gif'),require('../assets/blockchain.png')];
     for (let i =0; i< titles.length;i++){
       panels.push({title:titles[i],description:descriptions[i],image:images[i]})
     };
