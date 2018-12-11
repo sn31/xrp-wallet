@@ -34,12 +34,10 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-
 #nav a {
   font-weight: bold;
   color: white;
 }
-
 #nav a.router-link-exact-active {
   color: #42b983;
 }
