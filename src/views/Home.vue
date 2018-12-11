@@ -2,7 +2,7 @@
   <div class="home">
     <Intro msg="One frictionless experience to send money globally"/>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/dl4OzGHNaGk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <IntroPanel/>
+    <IntroPanel v-for="panel in panels" :panel="panel"/>>
   </div>
 </template>
 
@@ -15,6 +15,29 @@ export default {
   components: {
     Intro,
     IntroPanel
+  },
+  
+
+  data: function() {
+    let panels = [];
+  let titles = [
+    "Today’s Payment Rails Don’t Cut It",
+    "Meet RippleNet",
+    "Better Than Any Blockchain",
+    "Growing Global Network"
+  ];
+  let descriptions = [
+    "In a world where three billion people are connected online, cars drive themselves and appliances can communicate, global payments are still stuck in the disco era. Why? The payment infrastructure was built before the Internet with few updates.",
+    "Ripple connects banks and payment providers via RippleNet to provide one frictionless experience for sending and receiving money globally.",
+    "RippleNet runs on the most advanced blockchain technology. It is scaleable, secure and interoperates with different networks. Customers have optional access to source liquidity using the world's fastest and most reliable digital asset for payments: XRP.",
+    "Banks, payment providers and digital asset exchanges process and provide liquidity for payments on RippleNet, creating new, competitive cross-border payments services for their customers."
+  ];
+    for (let i =0; i< titles.length;i++){
+      panels.push({title:titles[i],description:descriptions[i]})
+    };
+    return {
+      panels
+    };
   }
 };
 </script>
