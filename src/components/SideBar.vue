@@ -1,17 +1,17 @@
 <template>
 
-  <el-col :span="6">
+  <el-col :span="4">
     <el-menu
       default-active="4"
       class="el-menu-vertical-demo"
       background-color="#545c64"
       text-color="#fff"
       active-text-color="#ffd04b">
-      <el-menu-item v-for="item in menuItems" index="2">
-        
-          <img :src="item.itemLogo"><br/>
+      <el-menu-item v-for="item in menuItems" :key = "item.id" index="item.id">
+        <div>
+          <a><img :src="item.itemLogo"></a>
           <span>{{item.itemName}}</span>
-      
+          </div>
       </el-menu-item><br/><br/><br/>
     </el-menu>
   </el-col>
@@ -23,9 +23,15 @@ template {
 }
 img {
   width: 20%;
+  float: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 li.el-menu-item {
-  margin-top: 40px; 
+  margin-top: 30px;
+}
+span {
+  margin: auto 0 auto 0;
 }
 </style>
 <script>
