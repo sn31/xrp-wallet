@@ -7,7 +7,7 @@
       background-color="#545c64"
       text-color="#fff"
       active-text-color="#ffd04b">
-      <el-menu-item v-for="item in menuItems" :key = "item.id" index="item.id">
+      <el-menu-item v-for="item in menuItems" :index = "item.id"  @click="handleClick">
         <div>
           <a><img :src="item.itemLogo"></a>
           <span>{{item.itemName}}</span>
@@ -60,6 +60,11 @@ export default {
     return {
       menuItems
     };
-  }
+  },
+  methods: {
+      handleClick(key, keyPath) {
+        console.log(key, keyPath);
+      }
+    }
 };
 </script>
