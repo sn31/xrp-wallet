@@ -1,6 +1,5 @@
 <template>
-
-  <el-col :span="4">
+  <el-col>
     <el-menu
       default-active="4"
       class="el-menu-vertical-demo"
