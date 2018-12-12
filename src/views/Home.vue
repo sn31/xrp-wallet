@@ -3,7 +3,17 @@
     <Intro msg="One frictionless experience to send money globally"/>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/dl4OzGHNaGk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <IntroPanel v-for="panel in panels" :panel="panel" :key="panel.id"/>>
+  <el-row>
+  <el-button>Default</el-button>
+  <el-button type="primary">Primary</el-button>
+  <el-button type="success">Success</el-button>
+  <el-button type="info">Info</el-button>
+  <el-button type="warning">Warning</el-button>
+  <el-button type="danger">Danger</el-button>
+</el-row>
+
   </div>
+  
 </template>
 
 <script>

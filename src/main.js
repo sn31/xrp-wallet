@@ -6,9 +6,11 @@ import BootstrapVue from "bootstrap-vue";
 import { uuid } from "vue-uuid";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
-import './plugins/element.js'
+import './plugins/element.js';
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 
-Vue.use(BootstrapVue, uuid);
+Vue.use(BootstrapVue, uuid,ElementUI);
 Vue.config.productionTip = false;
 
 new Vue({
