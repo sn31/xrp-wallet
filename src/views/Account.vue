@@ -13,7 +13,6 @@
 <style>
 
 .main-container {
-  margin-top: 5vh;
   height: 100vh;
   border: 1px solid #eee;
 }

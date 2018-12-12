@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <div id="nav" :class="show()">
       <router-link to ="/"><img id="logo" alt="Ripple logo" src="./assets/ripple-logo-white.png"></router-link>
       <div id="nav-items">
       <router-link to="/">Home</router-link> |
@@ -12,6 +12,25 @@
     <router-view/>
   </div>
 </template>
+<script>
+
+export default {
+  name: "app",
+  beforeCreate() {
+    console.log(this.$route);
+  },
+  methods :{
+    show() {
+      if (this.$route.fullPath === "/account")
+      {
+        console.log(this.$route.fullPath === "/account")
+        return "hide";
+      }
+      return "";
+    }
+  }
+}
+</script>
 
 <style>
 body {
@@ -47,5 +66,9 @@ body {
 #logo {
   width: 8%;
   float: left;
+}
+.hide {
+  height: 0;
+  display:none;
 }
 </style>
