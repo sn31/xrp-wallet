@@ -1,9 +1,27 @@
 <template>
-  <div class="about">
-    <h1>This is the profile page</h1>
+<el-container class="main-container">
+  <el-aside>
     <SideBar></SideBar>
-  </div>
+  </el-aside>
+  <el-container class="main-content">
+    <el-main>
+      <h1>Hello</h1>
+    </el-main>
+  </el-container>
+</el-container>
 </template>
+<style>
+
+.main-container {
+  margin-top: 5vh;
+  height: 100vh;
+  border: 1px solid #eee;
+}
+
+.el-aside {
+  color: #333;
+}
+</style>
 
 <script>
 import SideBar from "@/components/SideBar.vue";
@@ -13,5 +31,15 @@ export default {
   components: {
     SideBar
   },
-}
-  </script>
+  data() {
+    const item = {
+      date: "2016-05-02",
+      name: "Tom",
+      address: "No. 189, Grove St, Los Angeles"
+    };
+    return {
+      tableData: Array(20).fill(item)
+    };
+  }
+};
+</script>
