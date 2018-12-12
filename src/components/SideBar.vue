@@ -8,8 +8,9 @@
       active-text-color="#ffd04b">
       <el-menu-item v-for="item in menuItems" :index = "item.id"  @click="handleClick">
         <div>
-          <a><img :src="item.itemLogo"></a>
-          <span>{{item.itemName}}</span>
+          <router-link :to="item.route">
+          <img :src="item.itemLogo">
+          <span>{{item.itemName}}</span></router-link>
           </div>
       </el-menu-item><br/><br/><br/>
     </el-menu>
@@ -44,11 +45,13 @@ let itemLogos = [
   require("../assets/exchange-logo.png"),
   require("../assets/analytics-logo.png")
 ];
+let routes = ["/","","","","",""]
 for (let i = 0; i < itemNames.length; i++) {
   menuItems.push({
     id: uuid.v1(),
     itemName: itemNames[i],
-    itemLogo: itemLogos[i]
+    itemLogo: itemLogos[i],
+    route:routes[i]
   });
 }
 
