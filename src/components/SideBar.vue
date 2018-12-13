@@ -1,9 +1,8 @@
 <template>
   <el-col>
     <el-menu
-      default-active="4"
       class="el-menu-vertical-demo"
-      background-color="#545c64"
+      background-color="#2d323a"
       text-color="#fff"
       active-text-color="#ffd04b">
       <el-menu-item v-for="item in menuItems" :index = "item.id"  @click="handleClick">
@@ -20,6 +19,7 @@
 <style scoped>
 template {
   background-color: transparent;
+  height: 100vh;
 }
 img {
   width: 20%;
@@ -28,10 +28,17 @@ img {
   margin-bottom: 10px;
 }
 li.el-menu-item {
-  margin-top: 30px;
+  margin-top: 22%;
 }
 span {
   margin: auto 0 auto 0;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.el-menu {
+  height: 100vh;
 }
 </style>
 <script>
