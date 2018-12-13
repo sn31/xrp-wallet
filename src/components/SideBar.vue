@@ -71,8 +71,9 @@ export default {
     };
   },
   methods: {
-      handleClick(key, keyPath) {
-        console.log(key, keyPath);
+      handleClick(event) {
+        console.log("handleClick event is ran");
+        this.$emit('clicked','someValue')
       }
     }
 };
