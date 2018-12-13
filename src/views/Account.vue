@@ -1,13 +1,13 @@
 <template>
 <el-container class="main-container">
   <el-aside>
-    <SideBar @clicked="onClickChild"></SideBar>
+    <SideBar @clicked="showView"></SideBar>
   </el-aside>
   <el-container class="main-content">
     <el-main>
-      <Trade :class="showView()"></Trade>
-      <Exchange :class="showView()"></Exchange>
-      <Analytics :class="showView()"></Analytics>
+      <Trade :class="(show === 'Trade') ? 'pink' : 'hide'"></Trade>
+      <Exchange :class="(show === 'Exchange') ? 'pink' : 'hide'"></Exchange>
+      <Analytics :class="(show=== 'Analytics') ? 'pink' : 'hide'"></Analytics>
     </el-main>
   </el-container>
 </el-container>
@@ -23,8 +23,11 @@
 .el-main {
   background-color:pink;
 }
-.showView {
+.hide {
   display:none;
+}
+.pink {
+  background-color: purple;
 }
 </style>
 
@@ -42,9 +45,15 @@ export default {
     Exchange,
     Analytics
   },
+  data :{
+    show : ''
+  },
   methods: {
-    onClickChild(value){
-      console.log(value)
+   
+    showView(menuClicked)
+    {
+      console.log(menuClicked);
+      this.$data.show = menuClicked;
     }
   }
 };

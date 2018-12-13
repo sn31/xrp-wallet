@@ -5,7 +5,7 @@
       background-color="#2d323a"
       text-color="#fff"
       active-text-color="#ffd04b">
-      <el-menu-item v-for="item in menuItems" :index = "item.id"  @click="handleClick">
+      <el-menu-item v-for="item in menuItems" :index = "item.id"  @click="handleClick(item.itemName)">
         <div>
           <router-link :to="item.route">
           <img :src="item.itemLogo">
@@ -71,9 +71,8 @@ export default {
     };
   },
   methods: {
-      handleClick(event) {
-        console.log("handleClick event is ran");
-        this.$emit('clicked','someValue')
+      handleClick(itemName) {
+        this.$emit('clicked',itemName)
       }
     }
 };
