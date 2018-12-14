@@ -5,9 +5,11 @@
       background-color="#2d323a"
       text-color="#fff"
       active-text-color="#ffd04b">
-      <router-link to="/"> 
+      <div id="logo-container">
+      <router-link  to="/"> 
       <img id="logo" src="../assets/digi-logo.png">
       </router-link>
+      </div>
       
       <el-menu-item v-for="item in menuItems" :index = "item.id"  @click="handleClick(item.itemName)">
         <div>
@@ -28,9 +30,10 @@ template {
 img {
   width: 20%;
   float: left;
+  clear:both;
 }
 li.el-menu-item {
-  margin-top: 8vh;
+  margin-top: 10vh;
 }
 span {
   margin: auto 0 auto 0;
@@ -46,6 +49,11 @@ a {
 #logo {
   width: 100%;
 }
+
+#logo-container {
+  height: 6vh;
+  margin-bottom: 4vh;
+}
 </style>
 <script>
 import { uuid } from "vue-uuid";
@@ -58,7 +66,7 @@ let itemLogos = [
   require("../assets/exchange-logo.png"),
   require("../assets/analytics-logo.png")
 ];
-let routes = ["","","","","",""]
+let routes = ["","","","",""]
 for (let i = 0; i < itemNames.length; i++) {
   menuItems.push({
     id: uuid.v1(),
