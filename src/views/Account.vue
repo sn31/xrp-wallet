@@ -7,7 +7,7 @@
     <el-main>
       <Trade :class="(show === 'Trade') ? 'pink' : 'hide'"></Trade>
       <Exchange :class="(show === 'Exchange') ? 'pink' : 'hide'"></Exchange>
-      <Analytics :class="(show=== 'Analytics') ? 'pink' : 'hide'"></Analytics>
+      <Analytics :class="(show === 'Analytics') ? 'pink' : 'hide'"></Analytics>
     </el-main>
   </el-container>
 </el-container>
@@ -45,15 +45,16 @@ export default {
     Exchange,
     Analytics
   },
-  data :{
-    show : ''
+  
+  data(){
+    let show = "";
+    return {show};
   },
   methods: {
-   
     showView(menuClicked)
     {
       console.log(menuClicked);
-      this.$data.show = menuClicked;
+      this.show = menuClicked;
     }
   }
 };
