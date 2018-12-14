@@ -45,6 +45,7 @@ a {
 .el-menu {
   height: 100vh;
   overflow: hidden;
+  border-right: none;
 }
 #logo {
   width: 100%;

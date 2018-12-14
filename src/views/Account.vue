@@ -4,7 +4,7 @@
     <SideBar @clicked="showView"></SideBar>
   </el-aside>
   <el-container class="main-content">
-    <el-main>
+    <el-main id="main-view">
        <Profile :class="(show === 'Profile') ? 'pink' : 'hide'"></Profile>
        <Wallet :class="(show === 'Wallet') ? 'pink' : 'hide'"></Wallet>
       <Trade :class="(show === 'Trade') ? 'pink' : 'hide'"></Trade>
@@ -23,12 +23,14 @@
   color: #333;
 }
 .el-main {
-  background-color:pink;
+  background-color:white;
 }
 .hide {
   display:none;
 }
-
+#main-view {
+  padding:0;
+}
 </style>
 
 <script>
