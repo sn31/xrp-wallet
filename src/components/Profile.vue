@@ -1,5 +1,5 @@
 <template>
-<el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="120px" class="demo-ruleForm">
+<el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="180px" class="demo-ruleForm">
   <el-form-item label="User's Name" prop="name">
     <el-input v-model="ruleForm.name"></el-input>
   </el-form-item>
@@ -78,3 +78,14 @@
     }
   }
 </script>
+<style scoped>
+
+.el-select {
+    float: left;
+}
+.el-switch {
+    float: left;
+    margin-top: 1vh;
+}
+
+</style>
