@@ -3,7 +3,7 @@
   <div class="top">
     <h1>Wallet Net Worth</h1>
     <div>
-    <span>Number goes here</span>
+    <span>{{currentBalance}}</span>
     <el-select v-model="value" placeholder="Select">
         <el-option
         v-for="item in options"
@@ -56,15 +56,13 @@ export default {
         }
       ],
       value: "",
-      show
+      show,
+      currentBalance: 0.00
     };
   },
   methods: {
     handleClick(tab, event) {
-      console.log(tab);
-      console.log(tab["$el"]["id"]); 
       this.show = (tab["$el"]["id"]);
-      console.log(this.show);
     }
   }
 };
