@@ -1,6 +1,6 @@
 <template>
 <div class="container">
-<div class="top">
+  <div class="top">
     <h1>Wallet Net Worth</h1>
     <div>
     <span>Number goes here</span>
@@ -15,23 +15,34 @@
     </div>
     <div class="tabs">
         <el-tabs v-model="activeName" @tab-click="handleClick">
-            <el-tab-pane label="Balance" name="first">Balance</el-tab-pane>
-            <el-tab-pane label="Transactions" name="second">Transactions</el-tab-pane>
-            <el-tab-pane label="Open Orders" name="third">Open Orders</el-tab-pane>
+            <el-tab-pane label="Balance" name="first"></el-tab-pane>
+            <el-tab-pane label="Transactions" name="second"></el-tab-pane>
+            <el-tab-pane label="Open Orders" name="third"></el-tab-pane>
         </el-tabs>
      </div>
-    
-</div>
-<div class="bottom">
-
-</div>
+  </div>
+  <div class="bottom">
+    <Balance :class="(show === 'pane-first') ? '' : 'hide'"></Balance>
+    <Transactions :class="(show === 'pane-second') ? '' : 'hide'"></Transactions>
+    <OpenOrders :class="(show === 'pane-third') ? '' : 'hide'"></OpenOrders>
+  </div>
 </div>
 </template>
 
 
 <script>
+import Balance from "@/components/Balance.vue";
+import Transactions from "@/components/Transactions.vue";
+import OpenOrders from "@/components/OpenOrders.vue";
 export default {
+  name: "wallet",
+  components: {
+    Balance,
+    Transactions,
+    OpenOrders
+  },
   data() {
+    let show = "";
     return {
       activeName: "first",
       options: [
@@ -44,12 +55,16 @@ export default {
           label: "USD"
         }
       ],
-      value: ""
+      value: "",
+      show
     };
   },
   methods: {
     handleClick(tab, event) {
-      console.log(tab, event);
+      console.log(tab);
+      console.log(tab["$el"]["id"]); 
+      this.show = (tab["$el"]["id"]);
+      console.log(this.show);
     }
   }
 };
@@ -71,10 +86,15 @@ span {
   background-color: white;
   height: 70vh;
   padding: 0;
+  color: black;
 }
 
 .el-tabs {
-    display: inline-block;
-    margin: 3vh auto 2vh auto;
+  display: inline-block;
+  margin: 3vh auto 2vh auto;
+}
+
+.hide {
+  display: none;
 }
 </style>

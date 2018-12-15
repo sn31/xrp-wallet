@@ -5,11 +5,11 @@
   </el-aside>
   <el-container class="main-content">
     <el-main id="main-view">
-       <Profile :class="(show === 'Profile') ? 'pink' : 'hide'"></Profile>
-       <Wallet :class="(show === 'Wallet') ? 'pink' : 'hide'"></Wallet>
-      <Trade :class="(show === 'Trade') ? 'pink' : 'hide'"></Trade>
-      <Exchange :class="(show === 'Exchange') ? 'pink' : 'hide'"></Exchange>
-      <Analytics :class="(show === 'Analytics') ? 'pink' : 'hide'"></Analytics>
+       <Profile :class="(show === 'Profile') ? '' : 'hide'"></Profile>
+       <Wallet :class="(show === 'Wallet') ? '' : 'hide'"></Wallet>
+      <Trade :class="(show === 'Trade') ? '' : 'hide'"></Trade>
+      <Exchange :class="(show === 'Exchange') ? '' : 'hide'"></Exchange>
+      <Analytics :class="(show === 'Analytics') ? '' : 'hide'"></Analytics>
     </el-main>
   </el-container>
 </el-container>
