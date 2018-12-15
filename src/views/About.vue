@@ -59,7 +59,7 @@
   </el-container>
 </el-container>
 </template>
-<style>
+<style scoped>
 .el-header {
   background-color: #b3c0d1;
   color: #333;
@@ -75,6 +75,7 @@
 .main-container {
   height: 90vh;
   margin-top: 5vh;
+  background-color:white;
 }
 </style>
 

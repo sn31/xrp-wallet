@@ -14,7 +14,7 @@
   </el-container>
 </el-container>
 </template>
-<style>
+<style scoped>
 
 .main-container {
   height: 100vh;
@@ -22,7 +22,7 @@
 .el-aside {
   color: #333;
 }
-.el-main {
+#main-view {
   background-color:white;
 }
 .hide {
