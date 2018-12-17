@@ -42,7 +42,7 @@ export default {
     OpenOrders
   },
   data() {
-    let show = "";
+    let show = "pane-first";
     return {
       activeName: "first",
       options: [

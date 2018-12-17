@@ -53,7 +53,7 @@ export default {
   },
   
   data(){
-    let show = "";
+    let show = "Wallet";
     return {show};
   },
   methods: {
