@@ -11,6 +11,8 @@
     "bootstrap-vue": "^2.0.0-rc.11",
     "echarts": "^4.2.0-rc.2",
     "element-ui": "^2.4.5",
+    "mysql2": "^1.6.4",
+    "sequelize": "^4.42.0",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
     "vue-uuid": "^1.1.1",
