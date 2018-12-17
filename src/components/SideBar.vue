@@ -10,6 +10,7 @@
       <img id="logo" src="../assets/digi-logo.png">
       </router-link>
       </div>
+       <a href="#" v-on:click="logout" >Logout</a>  
       
       <el-menu-item v-for="item in menuItems" :index = "item.id"  @click="handleClick(item.itemName)">
         <div>
@@ -30,7 +31,7 @@ template {
 img {
   width: 20%;
   float: left;
-  clear:both;
+  clear: both;
 }
 li.el-menu-item {
   margin-top: 10vh;
@@ -58,6 +59,8 @@ a {
 </style>
 <script>
 import { uuid } from "vue-uuid";
+import router from "@/router";
+import axios from "axios";
 let menuItems = [];
 let itemNames = ["Profile", "Wallet", "Trade", "Exchange", "Analytics"];
 let itemLogos = [
@@ -67,13 +70,13 @@ let itemLogos = [
   require("../assets/exchange-logo.png"),
   require("../assets/analytics-logo.png")
 ];
-let routes = ["","","","",""]
+let routes = ["", "", "", "", ""];
 for (let i = 0; i < itemNames.length; i++) {
   menuItems.push({
     id: uuid.v1(),
     itemName: itemNames[i],
     itemLogo: itemLogos[i],
-    route:routes[i]
+    route: routes[i]
   });
 }
 
@@ -86,9 +89,15 @@ export default {
     };
   },
   methods: {
-      handleClick(itemName) {
-        this.$emit('clicked',itemName)
-      }
+    handleClick(itemName) {
+      this.$emit("clicked", itemName);
+    },
+    logout(e) {
+      console.log("Logging out");
+      axios.get("/api/logout").then(() => {
+        router.push("/");
+      });
     }
+  }
 };
 </script>
