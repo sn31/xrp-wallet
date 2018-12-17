@@ -1,5 +1,41 @@
-<template>
-  <div class="about">
-    <h1>This is the authentication page</h1>
-  </div>
+<template>  
+    <div>    
+        <h2>Login</h2>    
+        <form v-on:submit="login">    
+            <input type="text" name="email" /><br>    
+            <input type="password" name="password" /><br>    
+            <input type="submit" value="Login" />    
+        </form>    
+    </div>
 </template>
+
+<script>  
+    import router from "../router"    
+    import axios from "axios"    
+    export default {    
+        name: "Auth",    
+        methods: {    
+            login: (e) => {    
+                e.preventDefault()    
+                let email = "skye@dames.es"   
+                let password = "password"    
+                let login = () => {    
+                    let data = {    
+                        email: email,    
+                        password: password    
+                    }    
+                    axios.post("/api/login", data)    
+                        .then((response) => {    
+                            console.log("Logged in")    
+                            router.push("/account")    
+                        })    
+                        .catch((errors) => {    
+                            console.log(email, password);
+                            console.log("Cannot log in")    
+                        })    
+                }    
+                login()    
+            }    
+        }    
+    }
+</script>

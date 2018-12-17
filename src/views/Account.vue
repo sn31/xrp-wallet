@@ -15,7 +15,6 @@
 </el-container>
 </template>
 <style scoped>
-
 .main-container {
   height: 100vh;
 }
@@ -23,13 +22,13 @@
   color: #333;
 }
 #main-view {
-  background-color:white;
+  background-color: white;
 }
 .hide {
-  display:none;
+  display: none;
 }
 #main-view {
-  padding:0;
+  padding: 0;
 }
 </style>
 
@@ -40,6 +39,8 @@ import Exchange from "@/components/Exchange.vue";
 import Analytics from "@/components/Analytics.vue";
 import Profile from "@/components/Profile.vue";
 import Wallet from "@/components/Wallet.vue";
+import axios from "axios";
+import router from "@/router";
 
 export default {
   name: "account",
@@ -51,17 +52,32 @@ export default {
     Wallet,
     Profile
   },
-  
-  data(){
+
+  data() {
     let show = "Wallet";
-    return {show};
+    return { show, user: { name: "Skye" } };
   },
   methods: {
-    showView(menuClicked)
-    {
+    showView(menuClicked) {
       console.log(menuClicked);
       this.show = menuClicked;
+    },
+    getUserData: function() {
+      let self = this;
+      axios
+        .get("/api/user")
+        .then(response => {
+          console.log(response);
+          self.$set(this, "user", response.data.user);
+        })
+        .catch(errors => {
+          console.log(errors);
+          router.push("/");
+        });
     }
+  },
+  mounted() {
+    this.getUserData();
   }
 };
 </script>
