@@ -7,29 +7,49 @@
       <router-link to="/about">About</router-link> |
       <router-link to="/account">Account</router-link> |
       <router-link to="/auth">Authentication</router-link>
+      <a href="#" v-on:click="logout" >Logout</a>  
       </div>
     </div>
     <router-view/>
   </div>
 </template>
 <script>
-
+import router from "./router";
+import axios from "axios";
 export default {
   name: "app",
   beforeCreate() {
     console.log(this.$route);
   },
-  methods :{
+  methods: {
     show() {
-      if (this.$route.fullPath === "/account")
-      {
-        console.log(this.$route.fullPath === "/account")
+      if (this.$route.fullPath === "/account") {
+        console.log(this.$route.fullPath === "/account");
         return "hide";
       }
       return "";
+    },
+    logout(e) {
+      console.log("Logging out");
+      axios.get("/api/logout").then(() => {
+        router.push("/");
+      });
     }
+  },
+  mounted() {
+    console.log("hello - mounted");
+    let checkUser = () => {axios
+      .get("/api/user")
+      .then(response => {
+        console.log(response);
+      })
+      .catch(errors => {
+        console.log("email, password");
+      });
+    }
+    checkUser();
   }
-}
+};
 </script>
 
 <style>
@@ -69,6 +89,6 @@ body {
 }
 .hide {
   height: 0;
-  display:none;
+  display: none;
 }
 </style>
